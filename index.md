@@ -2,16 +2,16 @@
 
 ## 01-React
 
-- ### why learn react and what are the frerequisits
-- ### framework v/s library
-- ### topics covered
+- ### Why learn react and what are the frerequisits
+- ### Framework v/s library
+- ### Topics covered
 
 ---
 
 ## 02-React
 
 - ### npx and npm
-- ### creating react project
+- ### Creating react project
 - ### App creation & execution using Vite
 
 ---
@@ -22,9 +22,36 @@
 
 ---
 
-## 04-React & 04-React
+## 04-React & 04-React1
 
-- ### custom React
+- ### Custom React
 - ### Ways of adding JSX
+
+---
+
+## 05-React
+
+- ### React hooks (useState())
+
+---
+
+## 06-React (theory)
+
+- ### Virtual DOM & Fibre
+
+---
+
+## 07-React
+
+- ### Configuring tailwand css
+- ### Props
+
+## 08-React
+
+---
+
+## 09-React
+
+- ### background changer project (Hooks)
 
 ---
