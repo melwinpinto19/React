@@ -1,19 +1,13 @@
 import { useRef } from "react";
 import { useState } from "react";
-import App2 from "./App2.jsx";
 
 function App() {
   console.log("First Line ", Math.random());
 
   const [count, setCount] = useState(0);
-  // let data = useRef(0);
-
-  // console.log("2nd Line !", count);
-  // console.log("3rd Line !", data.current);
 
   const add = () => {
     setCount(count + 1);
-    // data.current++;
   };
 
   const remove = () => {
@@ -33,7 +27,6 @@ function App() {
         </div>
       </div>
       <div className="f-c">Value is {count}</div>
-      <App2 />
     </>
   );
 }
