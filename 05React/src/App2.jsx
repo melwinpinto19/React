@@ -7,6 +7,7 @@ function App2() {
   const count2 = useRef(0);
   const [state, setState] = useState(0);
   console.log(count1, count2);
+  //useRef() can also be used to refer jsx objects
   const refer = useRef();
   console.log(refer);
 
