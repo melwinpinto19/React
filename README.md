@@ -31,7 +31,7 @@
 
 ## 05-React
 
-- ### React hooks (useState(),useEffect(),useRef())
+- ### React hooks 
 
 ---
 
@@ -46,7 +46,7 @@
 - ### Configuring tailwand css
 - ### Props
 
-## 08-React
+## 08-React (theory)
 
 ---
 
@@ -58,6 +58,31 @@
 
 ## 10-React
 
-- ### password generator project (Hooks)
+- ### Password Generator (Hooks)
+
+---
+
+## 11-React
+
+- ### Currency convertor project
+
+---
+
+## 12-React
+
+- ### React Router
+
+---
+
+## 13-React
+
+- ### Context API
+
+---
+
+
+## 14-React
+
+- ### Todo List project (Context API)
 
 ---
