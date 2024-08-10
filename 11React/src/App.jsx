@@ -14,8 +14,16 @@ function App() {
   const c2 = useSelector((state) => state.currency.currencyToValue);
   const o1 = useSelector((state) => state.currency.currencyFromOption);
   const o2 = useSelector((state) => state.currency.currencyToOption);
-  const options = useSelector((state) => state.currency.currencyOptions);
+  const [options, setOptions] = useState([]);
   console.log(c1, o1, c2, o2);
+
+  useEffect(async () => {
+    let res = await fetch(
+      `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${o1.toLowerCase()}.json`
+    );
+    let data = await res.json();
+    setOptions([o1, ...Object.keys(data[o1.toLowerCase()])]);
+  }, []);
 
   const process = async () => {
     let res = await fetch(
@@ -47,7 +55,7 @@ function App() {
             onChange={(e) => dispatch(setCurrencyFromOption(e.target.value))}
             value={o1}
           >
-            {options.data.map((option) => (
+            {options.map((option) => (
               <option className="bg-red" key={Math.random()} value={option}>
                 {option}
               </option>
@@ -69,7 +77,7 @@ function App() {
             onChange={(e) => dispatch(setCurrencyToOption(e.target.value))}
             value={o2}
           >
-            {options.data.map((option) => (
+            {options.map((option) => (
               <option className="bg-red" key={Math.random()} value={option}>
                 {option}
               </option>
