@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import crudService from "../appwrite/CRUD";
+import Banner from "./Banner";
+import Auth from "../appwrite/Auth";
 
 function Home() {
   const [url, setUrl] = useState("");
@@ -16,36 +18,39 @@ function Home() {
         let res = await crudService.create(url, username, password);
         if (!res)
           setBanner(
-            <div className="absolute top-0 bg-black grid place-items-center w-full text-white h-10 font-mono">
-              something went wrong
-              <div className="absolute right-4" onClick={() => setBanner("")}>
-                X
-              </div>
-            </div>
+            <Banner
+              msg="something went wrong"
+              setBanner={setBanner}
+              color="red-500"
+            />
           );
         else
           setBanner(
-            <div className="absolute top-0 bg-black grid place-items-center w-full text-white h-10 font-mono">
-              password added sucessfully !!
-              <div className="absolute right-4" onClick={() => setBanner("")}>
-                X
-              </div>
-            </div>
+            <Banner
+              msg="password is added successfully !!"
+              setBanner={setBanner}
+            />
           );
       } catch (error) {
         console.log(error);
       }
     } else {
       setBanner(
-        <div className="absolute top-0 bg-black grid place-items-center w-full text-white h-10 font-mono">
-          Please fill in the fields properly
-          <div className="absolute right-4" onClick={() => setBanner("")}>
-            X
-          </div>
-        </div>
+        <Banner
+          msg={"fill in all the fields properly"}
+          setBanner={setBanner}
+          color="black"
+        />
       );
     }
   };
+
+  useEffect(() => {
+    // Auth.login("random10@gmail.com", "12345678").then((res) =>
+    //   console.log(res)
+    // );
+    Auth.get().then((res) => console.log(res));
+  });
 
   return (
     <>

@@ -64,6 +64,7 @@ class CRUD {
         config.appwriteCollectionId, // collectionId
         id // documentId
       );
+      return result;
     } catch (error) {
       console.log(error);
     }
